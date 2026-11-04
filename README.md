@@ -52,9 +52,22 @@ echo "標準入力からも" | .venv/bin/python chatprint.py -u なお
 
 `-c kuro`、`-c 黒猫`、`-c 三毛`（前方一致）のどれでも指定できます。
 
+## ウェブアプリ
+
+`web/` はブラウザから Web Bluetooth で直接印刷できる静的ページです（PC / Android の Chrome・Edge。iPhone の Safari は Web Bluetooth 非対応）。
+
+```sh
+.venv/bin/python -m http.server 8000 -d web   # http://localhost:8000 を Chrome で開く
+```
+
+キャラクターを変更したら `make_web_assets.py` で `web/characters/` を作り直します。
+`main` に push すると GitHub Actions で GitHub Pages に公開されます（リポジトリ設定で Pages のソースを「GitHub Actions」にしておく）。
+
 ## ファイル
 
 - `lxd02.py` — BLE 通信（hello → CRC16-XMODEM 認証 → 濃度 → ラスタ送信、hold/cooldown/再送要求の処理）
 - `characters.py` — 内蔵キャラクターの描画
 - `render.py` — 384px 幅・1bit の吹き出し画像生成
 - `chatprint.py` — CLI
+- `make_web_assets.py` — キャラクター画像をウェブアプリ用に書き出し
+- `web/` — ウェブアプリ（`lxd02.js` が Web Bluetooth 版ドライバ、`render.js` が画像生成）

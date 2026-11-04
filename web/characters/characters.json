@@ -1,0 +1,52 @@
+[
+  {
+    "key": "robo",
+    "label": "ネコロボ",
+    "mouthY": 72
+  },
+  {
+    "key": "shiro",
+    "label": "白猫",
+    "mouthY": 82
+  },
+  {
+    "key": "kuro",
+    "label": "黒猫",
+    "mouthY": 82
+  },
+  {
+    "key": "mike",
+    "label": "三毛猫",
+    "mouthY": 82
+  },
+  {
+    "key": "kijitora",
+    "label": "キジトラ",
+    "mouthY": 82
+  },
+  {
+    "key": "hachiware",
+    "label": "ハチワレ",
+    "mouthY": 82
+  },
+  {
+    "key": "siamese",
+    "label": "シャム猫",
+    "mouthY": 82
+  },
+  {
+    "key": "fold",
+    "label": "スコティッシュフォールド",
+    "mouthY": 82
+  },
+  {
+    "key": "persian",
+    "label": "ペルシャ（長毛）",
+    "mouthY": 82
+  },
+  {
+    "key": "mainecoon",
+    "label": "メインクーン（長毛）",
+    "mouthY": 82
+  }
+]
