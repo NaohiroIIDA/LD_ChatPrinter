@@ -1,7 +1,9 @@
 # LD_ChatPrinter
 
 ユーザー名とメッセージから「キャラクターが吹き出しで喋っている」画像を作り、
-Bluetooth サーマルプリンタ LX-D02 (FunnyPrint) で印刷する CLI。
+Bluetooth サーマルプリンタ LX-D02 (FunnyPrint) で印刷する CLI とウェブアプリ。
+
+ブラウザで使う → **https://naohiroiida.github.io/LD_ChatPrinter/**
 
 プロトコルは [cicloid/printable](https://github.com/cicloid/printable) の
 `docs/PROTOCOL.md` を参考に Python で実装しています。
@@ -54,14 +56,19 @@ echo "標準入力からも" | .venv/bin/python chatprint.py -u なお
 
 ## ウェブアプリ
 
-`web/` はブラウザから Web Bluetooth で直接印刷できる静的ページです（PC / Android の Chrome・Edge。iPhone の Safari は Web Bluetooth 非対応）。
+**公開ページ: https://naohiroiida.github.io/LD_ChatPrinter/**
+
+インストール不要で、ブラウザから Web Bluetooth で LX-D02 に直接印刷できます（PC / Android の Chrome・Edge。iPhone の Safari は Web Bluetooth 非対応）。
+「プリンタに接続」で LX-D02 を選び、名前とメッセージを入れて「印刷する」を押すだけです。
+
+ローカルで動かす場合:
 
 ```sh
 .venv/bin/python -m http.server 8000 -d web   # http://localhost:8000 を Chrome で開く
 ```
 
 キャラクターを変更したら `make_web_assets.py` で `web/characters/` を作り直します。
-`main` に push すると GitHub Actions で GitHub Pages に公開されます（リポジトリ設定で Pages のソースを「GitHub Actions」にしておく）。
+`web/` を変更して `main` に push すると、GitHub Actions で GitHub Pages に自動で公開されます。
 
 ## ファイル
 
